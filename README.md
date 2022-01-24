@@ -4,7 +4,7 @@
 
 # DB
 
-- sql 폴더에 user.sql query 실행
+- .github/sql 폴더에 user.sql query 실행
 
 # .env
 
