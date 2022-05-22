@@ -40,11 +40,12 @@ class MakeRes {
   makeErrorResponse(err = {}, name = "Syntax Error") {
     const error = new Error();
 
-    error.httpStatus = this.httpStatus;
-    error.code = this.code;
+    error["httpStatus"] = this.httpStatus;
+    error["code"] = this.code;
+    error["err"] =
+      typeof err === "object" && err["stack"] ? (err = String(err)) : err;
     error.message = this.message;
     error.name = name;
-    error.err = err;
 
     return error;
   }
